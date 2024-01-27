@@ -2,7 +2,7 @@ import passport from "passport";
 import httpStatus from "http-status";
 import APIError from "../utils/apiError.js";
 
-function authenticate(...requiredRights) {
+function authenticate() {
   return async (req, res, next) => {
     try {
       await passport.authenticate(
