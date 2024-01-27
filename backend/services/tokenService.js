@@ -15,7 +15,6 @@ export const generateRandomToken = async (tokenType, length = 66) => {
 
 export const verifyToken = async (token, type) => {
   const tokenDoc = await Token.findOne({ token, type, blacklisted: false });
-  console.log("tokenDoc", tokenDoc)
   if (!tokenDoc) {
     throw new APIError("Token not found", httpStatus.UNAUTHORIZED);
   }

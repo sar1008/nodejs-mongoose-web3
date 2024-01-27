@@ -10,7 +10,6 @@ const generateEthereumWallet = async () => {
   try {
     const wallet = Wallet.createRandom();
     let privateKeyEncrypt = await encryptPrivateKey(wallet.privateKey);
-    console.log(wallet.address, privateKeyEncrypt);
 
     return {
       publicKey: wallet.address,
@@ -39,7 +38,6 @@ const decryptPrivateKey = async (encryptedPrivateKey) => {
       encryptedPrivateKey,
       ENCRYPTION_KEY
     ).toString(enc.Utf8);
-    console.log("decrypted", decrypted)
     return decrypted;
  
 };
