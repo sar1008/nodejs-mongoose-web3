@@ -70,4 +70,10 @@ export default {
 
   NETWORK_ID: env.NETWORK_ID,
   INFURA_ID: env.INFURA_ID,
+
+  TOKEN_TYPES: {
+    REFRESH: "refresh",
+    VERIFY_EMAIL: "verifyEmail",
+    RESET_PASSWORD: "resetPassword",
+  },
 };
