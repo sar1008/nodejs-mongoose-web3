@@ -29,6 +29,10 @@ export const handleSignup = async (
     );
 
     if (response) {
+      localStorage.setItem(
+        "accessToken",
+        response.data.data.tokens.accessToken.token
+      );
       alert("Sign Up Successfull");
       return response.data;
     }
@@ -37,5 +41,3 @@ export const handleSignup = async (
     console.error("Error during signup:", error);
   }
 };
-
-

@@ -19,6 +19,12 @@ export const handleSignIn = async (userName: string, password: string) => {
     );
 
     if (response) {
+      localStorage.setItem(
+        "accessToken",
+        response.data.data.tokens.accessToken.token
+      );
+
+
       alert("Sign In Successfull");
       return response.data;
     }
