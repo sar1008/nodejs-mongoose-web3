@@ -34,6 +34,9 @@ const envValidate = Joi.object()
       .allow("")
       .empty("")
       .default("http://localhost:777"),
+
+    NETWORK_ID: Joi.number().required(),
+    INFURA_ID: Joi.string().required(),
   })
   .unknown();
 
@@ -63,19 +66,8 @@ export default {
 
   JWT_ACCESS_TOKEN_EXPIRATION_MINUTES: env.JWT_ACCESS_TOKEN_EXPIRATION_MINUTES,
 
-  REFRESH_TOKEN_EXPIRATION_DAYS: env.REFRESH_TOKEN_EXPIRATION_DAYS,
-
-  VERIFY_EMAIL_TOKEN_EXPIRATION_MINUTES:
-    env.VERIFY_EMAIL_TOKEN_EXPIRATION_MINUTES,
-
-  RESET_PASSWORD_TOKEN_EXPIRATION_MINUTES:
-    env.RESET_PASSWORD_TOKEN_EXPIRATION_MINUTES,
-
   FRONTEND_URL: env.FRONTEND_URL,
 
-  TOKEN_TYPES: {
-    REFRESH: "refresh",
-    VERIFY_EMAIL: "verifyEmail",
-    RESET_PASSWORD: "resetPassword",
-  },
+  NETWORK_ID: env.NETWORK_ID,
+  INFURA_ID: env.INFURA_ID,
 };
